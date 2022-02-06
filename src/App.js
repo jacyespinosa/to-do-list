@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const  StyledContainer= styled.div`
-  border: 2px solid gray;
   padding: 15px 55px;
   width: 40%;
   margin: auto;
@@ -15,9 +14,6 @@ const StyledLogo = styled.h1 `
   margin-top: 5px;
 `
 
-const StyledH3 = styled.h3 `
-  margin-right: 390px;
-`
 
 function App() {
   const [newTask, setNewTask]   = useState("");
@@ -31,10 +27,7 @@ function App() {
                 <StyledLogo>What To Do?</StyledLogo>
             </div>
             <ToDoForm toDos={toDos} newTask={newTask} setNewTask={setNewTask} setToDoList={setToDoList}/>
-            <div>
-                <StyledH3>To Do List</StyledH3>
-            </div>
-            <ToDoList toDos={toDos}/>
+            <ToDoList toDos={toDos} setToDoList={setToDoList}/>
         </StyledContainer>
 
     </div>
