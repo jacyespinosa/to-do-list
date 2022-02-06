@@ -1,16 +1,42 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HomePage} from "./pages/HomePage";
+import { ToDoForm} from "./components/ToDoForm";
+import { ToDoList} from "./components/ToDoList";
 import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
 
+const  StyledContainer= styled.div`
+  border: 2px solid gray;
+  padding: 15px 55px;
+  width: 40%;
+  margin: auto;
+  margin-top: 50px;
+`
+const StyledLogo = styled.h1 `
+  margin-top: 5px;
+`
+
+const StyledH3 = styled.h3 `
+  margin-right: 390px;
+`
 
 function App() {
+  const [newTask, setNewTask]   = useState("");
+  const [toDos, setToDoList] = useState([]);
+
   return (
     <div className="App">
-        <Router>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-            </Routes>
-        </Router>
+        <StyledContainer>
+            <div>
+                <img src="https://img.icons8.com/nolan/100/todo-list.png" alt="to-do"/>
+                <StyledLogo>What To Do?</StyledLogo>
+            </div>
+            <ToDoForm toDos={toDos} newTask={newTask} setNewTask={setNewTask} setToDoList={setToDoList}/>
+            <div>
+                <StyledH3>To Do List</StyledH3>
+            </div>
+            <ToDoList toDos={toDos}/>
+        </StyledContainer>
+
     </div>
   );
 }
