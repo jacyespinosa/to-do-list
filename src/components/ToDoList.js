@@ -12,7 +12,9 @@ export const ToDoList = ({ toDos, setToDoList }) => {
                         toDos={toDos}
                         text={todo.text}
                         todo={todo}
-                        key={todo.id}/>
+                        key={todo.id}
+                        completed={todo.completed}
+                    />
                 ))}
             </ul>
         </div>

@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.completed {
+  text-decoration: line-through;
+  background-color: lightgreen;
+  opacity: 0.5;
+}

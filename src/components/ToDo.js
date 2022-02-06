@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import { ToDoList} from "./ToDoList";
+import {CompletedTasks} from "./CompletedTasks";
+
 
 const StyledDivTasks = styled.div `
   display: flex;
@@ -25,7 +27,8 @@ const StyledCrossIcon = styled.a`
   padding: 0 5px;
 `
 
-export const ToDo = ({ text, toDos, todo, setToDoList }) => {
+
+export const ToDo = ({ text, toDos, todo, setToDoList, completed }) => {
     const deleteTask = () => {
         //Change the state of the toDos (list) to only render the IDs that have not been removed.
         setToDoList(toDos.filter((el) => el.id !== todo.id));
@@ -45,9 +48,10 @@ export const ToDo = ({ text, toDos, todo, setToDoList }) => {
 
     return (
         <StyledDivTasks>
-            <StyledTask>{ text }</StyledTask>
+            <StyledTask className={`${completed ? "completed" : ''}`}>{ text }</StyledTask>
             <button onClick={completeTask}>✅</button>
             <button onClick={deleteTask}>❌</button>
+
             {/*<StyledCheckIcon>✅</StyledCheckIcon><StyledCrossIcon>❌</StyledCrossIcon>*/}
         </StyledDivTasks>
 
