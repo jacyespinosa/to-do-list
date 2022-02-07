@@ -4,8 +4,8 @@ import { ToDo } from './ToDo';
 export const ToDoList = ({ toDos, setToDoList }) => {
     // Loop through the list of toDos using map function and pass each item (object) as a prop to the other component.
     return (
-        <div className="todo-container">
-            <ul className="todo-list">
+        <div>
+            <ul>
                 { toDos.map(todo => (
                     <ToDo
                         setToDoList={setToDoList}

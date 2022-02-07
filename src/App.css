@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -41,4 +42,10 @@
   text-decoration: line-through;
   background-color: lightgreen;
   opacity: 0.5;
+}
+
+.fa-plus{
+  background-color: transparent;
+  color: deepskyblue;
+  font-size:24px;
 }

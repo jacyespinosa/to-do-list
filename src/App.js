@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 const  StyledContainer= styled.div`
   padding: 15px 55px;
-  width: 40%;
+  width: 50%;
+  min-height: auto;
   margin: auto;
   margin-top: 50px;
 `
@@ -20,17 +21,17 @@ function App() {
   const [toDos, setToDoList] = useState([]);
 
   return (
-    <div className="App">
-        <StyledContainer>
-            <div>
-                <img src="https://img.icons8.com/nolan/100/todo-list.png" alt="to-do"/>
-                <StyledLogo>What To Do?</StyledLogo>
-            </div>
-            <ToDoForm toDos={toDos} newTask={newTask} setNewTask={setNewTask} setToDoList={setToDoList}/>
-            <ToDoList toDos={toDos} setToDoList={setToDoList}/>
-        </StyledContainer>
+        <div className="App">
+            <StyledContainer>
+                <div>
+                    <img src="https://img.icons8.com/nolan/100/todo-list.png" alt="to-do"/>
+                    <StyledLogo>What To Do?</StyledLogo>
+                </div>
+                <ToDoForm toDos={toDos} newTask={newTask} setNewTask={setNewTask} setToDoList={setToDoList}/>
+                <ToDoList toDos={toDos} setToDoList={setToDoList}/>
+            </StyledContainer>
 
-    </div>
+        </div>
   );
 }
 

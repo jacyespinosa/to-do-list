@@ -1,15 +1,28 @@
 import React from 'react';
 import styled from "styled-components";
 
-const StyledButton = styled.button `
-  width: 45px;
-  height: 31px;
+
+const StyledForm = styled.form`
+  display: flex;
+  padding-top: 5px;
+  justify-content: center;
 `
 
 const StyledInputTask = styled.input `
-  min-width: 55%;
+  flex: 0 0 515px;
   height: 25px;
+  padding-top: 5px;
+  border: 1px solid gray;
 `
+
+const StyledButton = styled.button `
+  flex: 0 0 15px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+`
+
+
 
 export const ToDoForm = ({ newTask, setNewTask, toDos, setToDoList }) => {
     //When there is a change in the input, the state of newTask is changed using the element target value being passed
@@ -30,11 +43,14 @@ export const ToDoForm = ({ newTask, setNewTask, toDos, setToDoList }) => {
     };
 
     return (
-        <form>
-            <StyledInputTask value={newTask} onChange={newTaskHandler} type="text" className="todo-input" />
-            <StyledButton onClick={ToDoListHandler} className="todo-button" type="submit">Add</StyledButton>
+            <StyledForm>
+                <StyledInputTask value={newTask} onChange={newTaskHandler} type="text" className="todo-input" />
+                <StyledButton onClick={ToDoListHandler} className="todo-button" type="submit">
+                    <i className="fa fa-plus"></i>
+                </StyledButton>
+            </StyledForm>
 
-        </form>
+
 
     )
 }

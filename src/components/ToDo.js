@@ -6,25 +6,27 @@ import {CompletedTasks} from "./CompletedTasks";
 
 const StyledDivTasks = styled.div `
   display: flex;
+  padding-top: 5px;
   justify-content: center;
 `
 const StyledTask = styled.div `
-  flex: 0 0 422px;
-  //width: 422px;
-  //margin: auto;
+  flex: 0 0 515px;
   height: 25px;
   padding-top: 5px;
   border: 1px solid gray;
 `
 
 const StyledCheckIcon = styled.a`
-  flex: 0 0 10px;
-  padding: 0 5px;
+  flex: 0 0 15px;
+  border-right: 2px solid gray;
+  padding: 0 10px;
+  cursor: pointer;
 `
 
 const StyledCrossIcon = styled.a`
-  flex: 0 0 10px;
-  padding: 0 5px;
+  flex: 0 0 15px;
+  padding: 0 8px;
+  cursor: pointer;
 `
 
 
@@ -49,10 +51,8 @@ export const ToDo = ({ text, toDos, todo, setToDoList, completed }) => {
     return (
         <StyledDivTasks>
             <StyledTask className={`${completed ? "completed" : ''}`}>{ text }</StyledTask>
-            <button onClick={completeTask}>✅</button>
-            <button onClick={deleteTask}>❌</button>
-
-            {/*<StyledCheckIcon>✅</StyledCheckIcon><StyledCrossIcon>❌</StyledCrossIcon>*/}
+            <StyledCheckIcon onClick={completeTask}>✅</StyledCheckIcon>
+            <StyledCrossIcon onClick={deleteTask}>❌</StyledCrossIcon>
         </StyledDivTasks>
 
     );
